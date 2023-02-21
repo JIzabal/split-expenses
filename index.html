@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test</title>
+        <link rel="stylesheet" href="main.css">
+        <script src="main.js" defer="defer"></script>
+    </head>
+    <body>
+        <form id="expense-form">
+            <ul>
+                <li>
+                    <label for="expense-description">Expense Description</label>
+                    <input type="text" id="expense-description" placeholder="Description">
+                </li>
+                <li>
+                    <label for="expense-amount">Expense Amount</label>
+                    <input type="number" id="expense-amount" placeholder="Dollar Amount">
+                </li>
+                <li>
+                    <label for="num-people">Number of People</label>
+                    <input type="number" id="num-people" placeholder="Number of People">
+                </li>
+                <li>
+                    <button id="add-btn" type="button">Add</button>
+                </li>
+            </ul>
+        </form>
+
+        <button id="local-storage-btn">Get expenses from Local Storage</button>
+
+        <table id="dollar-table">
+            <thead>
+                <th>Expense Description</th>
+                <th>Expense Amount</th>
+                <th>Expense Split</th>
+            </thead>
+            <tbody>
+                <tr id="total-row">
+                    <td>Total</td>
+                    <td id="total-amount">0</td>
+                    <td>X</td>
+                </tr>
+                <tr>
+                    <td>Split</td>
+                    <td id="split-amount">0</td>
+                    <td>X</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+
+    <template id="expense-row">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </template>
+</html>
