@@ -48,7 +48,8 @@ function addExpense() {
     addExpenseToTotal(expenseAmount.value);
     splitTotalExpenses();
     saveExpense(expenseAmount.value, expenseDescription.value);
-    resetForm(expenseAmount, expenseDescription);
+    expenseForm.reset();
+    expenseDescription.focus();
 }
 
 function saveExpense(amount, description) {
@@ -62,20 +63,21 @@ function saveExpense(amount, description) {
     localStorage.setItem('expenses', JSON.stringify(expenses));
 }
 
-function resetForm(expenseAmount, expenseDescription) {
-    expenseAmount.value = '';
-    expenseDescription.value = '';
-    expenseDescription.focus();
-}
-
 function addExpenseToTable(expenseAmount, expenseDescription) {
     let template = document.querySelector('#expense-row');
     let clone = template.content.cloneNode(true);
 
-    let td = clone.querySelectorAll('td');
-    td[0].textContent = expenseDescription;
-    td[1].textContent = expenseAmount;
-    td[2].textContent = splitExpense(expenseAmount);
+    let tds = clone.querySelectorAll('td');
+    let input = tds[0].querySelector('input');
+    let label = tds[0].querySelector('label');
+
+    // https://stackoverflow.com/questions/8012002/create-a-unique-number-with-javascript-time#answer-40591207
+    let uniqueID = Date.now() + Math.random();
+    input.id += `-${uniqueID}`;
+    label.htmlFor += `-${uniqueID}`;
+    label.innerText = expenseDescription;
+    tds[1].textContent = expenseAmount;
+    tds[2].textContent = splitExpense(expenseAmount);
 
     let dollarTableBody = document.querySelector('#dollar-table > tbody');
     let totalRow = document.querySelector('#total-row');

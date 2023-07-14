@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
         <title>Test</title>
         <link rel="stylesheet" href="main.css">
         <script src="main.js" defer="defer"></script>
@@ -46,7 +48,12 @@
 
     <template id="expense-row">
         <tr>
-            <td></td>
+            <td>
+                <div style="display: flex;">
+                    <input class="expense-row-description-input" type="checkbox">
+                    <label class="expense-row-description-label"></label>
+                </div>
+            </td>
             <td></td>
             <td></td>
         </tr>
