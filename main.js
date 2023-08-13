@@ -2,6 +2,9 @@
 // Then add all the provided inputs from the user and split the total evenly between an input number of people.
 // Then display the total and the split amount in a table.
 
+// https://www.freecodecamp.org/news/how-to-read-json-file-in-javascript/ - Could be worth implementing functionality to read old json files
+import julyJson from './expenses-in-json/july-starting-on-the-7th.json' assert { type: 'json' };
+console.log(julyJson);
 
 // Global Variables
 let total = 0;
