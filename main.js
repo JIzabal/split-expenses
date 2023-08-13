@@ -4,6 +4,7 @@
 
 // https://www.freecodecamp.org/news/how-to-read-json-file-in-javascript/ - Could be worth implementing functionality to read old json files
 import julyJson from './expenses-in-json/july-starting-on-the-7th.json' assert { type: 'json' };
+import augustJson from './expenses-in-json/august-2023.json' assert { type: 'json' };
 console.log(julyJson);
 
 // Global Variables
